@@ -16,3 +16,4 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/movie/{slug}', [HomeController::class, 'movieDetail'])->name('home.movie_detail');

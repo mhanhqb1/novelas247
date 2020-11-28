@@ -83,8 +83,8 @@ $_siteDescription = 'Novelas';
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=245530479242476&autoLogAppEvents=1" nonce="tRcnz9VF"></script>
 
-    <div class="container">
-        <header class="blog-header py-3 border-bottom">
+    <div class="container-fluid">
+        <header class="blog-header py-3 container">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col text-center text-bold">
                     <a class="blog-header-logo" href="{{ url('/') }}">{{ $_siteName }}</a>
@@ -92,14 +92,17 @@ $_siteDescription = 'Novelas';
             </div>
         </header>
 
-        <div class="nav-scroller py-1 mb-2 border-bottom">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-center" href="{{ url('/') }}">Home</a>
-                <a class="p-2 text-center" href="{{ url('/images') }}">Images</a>
-                <a class="p-2 text-center" href="{{ url('/videos') }}">Videos</a>
-                <a class="p-2 text-center" href="{{ url('/movies') }}">Movies</a>
-            </nav>
+        <div class="container-fluid border-bottom">
+            <div class="nav-scroller py-1 mb-2 container">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 text-center" href="{{ url('/') }}">Home</a>
+                    <a class="p-2 text-center" href="{{ url('/images') }}">Images</a>
+                    <a class="p-2 text-center" href="{{ url('/videos') }}">Videos</a>
+                    <a class="p-2 text-center" href="{{ url('/movies') }}">Movies</a>
+                </nav>
+            </div>
         </div>
+        
     </div>
 
     <main role="main" class="container">

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model {
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -44,9 +44,6 @@ class Movie extends Model {
         }
 
         # Filter
-        if (isset($params['status']) && $params['status'] != '') {
-            $data = $data->where('status', $params['status']);
-        }
         if (isset($params['is_hot']) && $params['is_hot'] != '') {
             $data = $data->where('is_hot', $params['is_hot']);
         }
