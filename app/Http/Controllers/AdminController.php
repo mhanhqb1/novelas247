@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Image;
-use App\Models\YoutubeChannelVideo;
-use App\Models\MasterSource;
+use App\Models\Movie;
 
 use Illuminate\Http\Request;
 
@@ -14,12 +12,12 @@ class AdminController extends Controller
     /**
      * Get list images
      */
-    public static function checkImages(Request $request)
+    public static function movies(Request $request)
     {
         $params = $request->all();
         $params['limit'] = 999;
-        $images = Image::get_list($params);
-        return view('admin.image', ['images' => $images, 'params' => $params]);
+        $data = Movie::get_list($params);
+        return view('admin.movies', ['data' => $data, 'params' => $params]);
     }
     
     /**

@@ -18,3 +18,6 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/movie/{slug}', [HomeController::class, 'movieDetail'])->name('home.movie_detail');
 Route::get('/video/{movieSlug}/{videoNumber}', [HomeController::class, 'videoDetail'])->name('home.video_detail');
+
+$routeAdmin = 'admin';
+Route::get("/{$routeAdmin}/movies", [AdminController::class, 'movies'])->name('admin.movies');
