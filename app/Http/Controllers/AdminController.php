@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Movie;
+use App\Models\Video;
 use App\Models\Country;
 
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {   
     /**
-     * Get list images
+     * Get list movies
      */
     public static function movies(Request $request)
     {
@@ -22,7 +23,7 @@ class AdminController extends Controller
     }
     
     /**
-     * Get list images
+     * Add movie
      */
     public static function movieAdd(Request $request)
     {
@@ -35,7 +36,7 @@ class AdminController extends Controller
     }
     
     /**
-     * Get list images
+     * Save movie
      */
     public static function movieSave(Request $request)
     {
@@ -47,6 +48,33 @@ class AdminController extends Controller
         $movie->description = $request->description;
         $movie->is_hot = !empty($request->is_hot) ? 1 : 0;
         $movie->save();
+        
+        return redirect()->route('admin.movies');
+    }
+    
+    /**
+     * Add video
+     */
+    public static function videoAdd($movieId)
+    {
+        return view('admin.video_add', [
+            'movieId' => $movieId
+        ]);
+    }
+    
+    /**
+     * Save video
+     */
+    public static function videoSave(Request $request)
+    {
+        $name = 'Capitulo'.' '.$request->number;
+        $video = new Video();
+        $video->name = $name;
+        $video->slug = self::createSlug($name);
+        $video->movie_id = $request->movie_id;
+        $video->number = $request->number;
+        $video->content = $request->content;
+        $video->save();
         
         return redirect()->route('admin.movies');
     }

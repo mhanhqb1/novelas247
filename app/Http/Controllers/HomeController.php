@@ -67,7 +67,7 @@ class HomeController extends Controller
                 )
                 ->first();
         if (empty($data)) {
-            die('Invalid movie');
+            return redirect()->route('home.index');
         }
         $pageTitle = $data->movie_name . ' - ' . $data->number;
         $pageImage = $data->image;

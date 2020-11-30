@@ -38,7 +38,7 @@
                         <td>{{ $v->name }}</td>
                         <td>
                             <a href="" class="btn btn-primary">Edit</a>
-                            <a href="" class="btn btn-info">Add Video</a>
+                            <a href="{{ route('admin.video_add', ['movieId' => $v->id]) }}" class="btn btn-info">Add Video</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
