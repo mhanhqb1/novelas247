@@ -36,6 +36,21 @@ class AdminController extends Controller
     }
     
     /**
+     * Add detail
+     */
+    public static function movieDetail($movieId)
+    {
+        $data = Movie::find($movieId);
+        $country = Country::find($data->country_id);
+        $videos = Video::where('movie_id', $data->id)->get();
+        return view('admin.movie_detail', [
+            'data' => $data,
+            'country' => $country,
+            'videos' => $videos
+        ]);
+    }
+    
+    /**
      * Save movie
      */
     public static function movieSave(Request $request)

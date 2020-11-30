@@ -37,6 +37,7 @@
                         <td><label for="checkId-{{ $v->id }}"><img src="{{ $v->image }}" width="200px"/></label></td>
                         <td>{{ $v->name }}</td>
                         <td>
+                            <a href="{{ route('admin.movie_detail', ['movieId' => $v->id]) }}" class="btn btn-warning">Detail</a>
                             <a href="" class="btn btn-primary">Edit</a>
                             <a href="{{ route('admin.video_add', ['movieId' => $v->id]) }}" class="btn btn-info">Add Video</a>
                         </td>

@@ -13,3 +13,6 @@ main.container {
     vertical-align: middle;
     text-align: center;
 }
+.bg-gray-900 {
+    background-color: #eee;
+}
