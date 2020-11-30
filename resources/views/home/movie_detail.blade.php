@@ -4,37 +4,11 @@
 <div class="row" style="padding:4rem 0;">
     <div class="col blog-main movie-detail">
         <div class="row mb-2">
-            <div class="col-12">
-                <h1 class="text-orange-500">{{ $pageTitle }}</h1>
-            </div>
-            
-            <div class="col-12">
-                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"> 
-                    <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x7xql2o?autoplay=1&mute=0" width="100%" height="100%" allowfullscreen allow="autoplay"> </iframe> 
-                </div>
-            </div>
-            
-            <?php if (!empty($listVideos)): ?>
-            <div class="col-12 list-videos">
-                <ul>
-                    <?php foreach ($listVideos as $v): ?>
-                    <li><a href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $v['number']]) }}">{{ $v['number'] }}</a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <?php endif; ?>
-        </div>
-    </div>
-</div>
-
-<div class="row border-top" style="padding:4rem 0;">
-    <div class="col blog-main movie-detail">
-        <div class="row mb-2">
             <div class="col-6 text-center">
                 <img class="movie-image" src="{{ $data->image }}"/>
             </div>
             <div class="col-6">
-                <h2>{{ $data->movie_name }}</h2>
+                <h2>{{ $data->name }}</h2>
                 <p class="card-movie-rate">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -45,6 +19,10 @@
                 <p class="movie-description">
                     {{ $data->description }}
                 </p>
+                <a href="{{ route('home.video_detail', ['movieSlug' => $data->slug, 'videoNumber' => 1]) }}" class="btn movie-button box-shadow">
+                    <svg class="w-6 fill-current" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                    <span>Watch Movie</span>
+                </a>
             </div>
         </div>
     </div>
