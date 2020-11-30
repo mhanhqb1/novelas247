@@ -232,5 +232,21 @@ h1, h2, h3, h4, h5, h6 {
     vertical-align: middle;
 }
 .list-videos {
-    
+    margin: 2rem 0;
+}
+.list-videos li {
+    display: inline-block;
+    list-style: none;
+}
+.list-videos li a {
+    padding: 7px 15px;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid #ed8936;
+    border-radius: 3px;
+    font-size: 15px;
+}
+.list-videos li a.active {
+    color: #1a202c;
+    background: #ed8936;
 }

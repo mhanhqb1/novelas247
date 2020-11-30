@@ -71,14 +71,15 @@ class HomeController extends Controller
         }
         $pageTitle = $data->movie_name . ' - ' . $data->number;
         $pageImage = $data->image;
-        $listVideos = Video::where('movie_id', $data->movie_id)->orderBy('number', 'desc')->get();
+        $listVideos = Video::where('movie_id', $data->movie_id)->orderBy('number', 'asc')->get();
         $related = Movie::inRandomOrder()->where('is_hot', 1)->where('id', '!=', $data->movie_id)->limit($limit)->get();
         return view('home.video_detail', [
             'data' => $data, 
             'pageTitle' => $pageTitle,
             'pageImage' => $pageImage,
             'related' => $related,
-            'listVideos' => $listVideos
+            'listVideos' => $listVideos,
+            'videoNumber' => $videoNumber
         ]);
     }
 }

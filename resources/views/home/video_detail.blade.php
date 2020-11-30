@@ -8,21 +8,21 @@
                 <h1 class="text-orange-500">{{ $pageTitle }}</h1>
             </div>
             
+            <?php if (!empty($listVideos)): ?>
+            <ul class="col-12 list-videos">
+                <?php foreach ($listVideos as $v): ?>
+                <li>
+                    <a class="{{ $v['number'] == $videoNumber ? 'active' : '' }}" href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $v['number']]) }}">{{ $v['number'] }}</a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
+            
             <div class="col-12">
                 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"> 
                     <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x7xql2o?autoplay=1&mute=0" width="100%" height="100%" allowfullscreen allow="autoplay"> </iframe> 
                 </div>
             </div>
-            
-            <?php if (!empty($listVideos)): ?>
-            <div class="col-12 list-videos">
-                <ul>
-                    <?php foreach ($listVideos as $v): ?>
-                    <li><a href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $v['number']]) }}">{{ $v['number'] }}</a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <?php endif; ?>
         </div>
     </div>
 </div>
