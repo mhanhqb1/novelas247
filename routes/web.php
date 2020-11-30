@@ -21,3 +21,5 @@ Route::get('/video/{movieSlug}/{videoNumber}', [HomeController::class, 'videoDet
 
 $routeAdmin = 'admin';
 Route::get("/{$routeAdmin}/movies", [AdminController::class, 'movies'])->name('admin.movies');
+Route::get("/{$routeAdmin}/movie/add", [AdminController::class, 'movieAdd'])->name('admin.movie_add');
+Route::post("/{$routeAdmin}/movie/save", [AdminController::class, 'movieSave'])->name('admin.movie_save');

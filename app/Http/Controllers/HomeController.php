@@ -34,7 +34,7 @@ class HomeController extends Controller
         $limit = 8;
         $data = Movie::where('slug', $slug)->first();
         if (empty($data)) {
-            die('Invalid movie');
+            return redirect()->route('home.index');
         }
         $pageTitle = $data->name;
         $pageImage = $data->image;

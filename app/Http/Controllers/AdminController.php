@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Movie;
+use App\Models\Country;
 
 use Illuminate\Http\Request;
 
@@ -18,6 +19,46 @@ class AdminController extends Controller
         $params['limit'] = 999;
         $data = Movie::get_list($params);
         return view('admin.movies', ['data' => $data, 'params' => $params]);
+    }
+    
+    /**
+     * Get list images
+     */
+    public static function movieAdd(Request $request)
+    {
+        $countries = Country::get_list([
+            'limit' => 999
+        ]);
+        return view('admin.movie_add', [
+            'countries' => $countries
+        ]);
+    }
+    
+    /**
+     * Get list images
+     */
+    public static function movieSave(Request $request)
+    {
+        $movie = new Movie();
+        $movie->name = $request->name;
+        $movie->slug = self::createSlug($request->name);
+        $movie->image = $request->image;
+        $movie->country_id = $request->country_id;
+        $movie->description = $request->description;
+        $movie->is_hot = !empty($request->is_hot) ? 1 : 0;
+        $movie->save();
+        
+        return redirect()->route('admin.movies');
+    }
+    
+    public static function createSlug($str, $delimiter = '-'){
+
+        $unwanted_array = ['ś'=>'s', 'ą' => 'a', 'ć' => 'c', 'ç' => 'c', 'ę' => 'e', 'ł' => 'l', 'ń' => 'n', 'ó' => 'o', 'ź' => 'z', 'ż' => 'z',
+            'Ś'=>'s', 'Ą' => 'a', 'Ć' => 'c', 'Ç' => 'c', 'Ę' => 'e', 'Ł' => 'l', 'Ń' => 'n', 'Ó' => 'o', 'Ź' => 'z', 'Ż' => 'z']; // Polish letters for example
+        $str = strtr( $str, $unwanted_array );
+
+        $slug = strtolower(trim(preg_replace('/[\s-]+/', $delimiter, preg_replace('/[^A-Za-z0-9-]+/', $delimiter, preg_replace('/[&]/', 'and', preg_replace('/[\']/', '', iconv('UTF-8', 'ASCII//TRANSLIT', $str))))), $delimiter));
+        return $slug;
     }
     
     /**

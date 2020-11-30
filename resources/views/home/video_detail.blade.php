@@ -43,7 +43,7 @@
                     <span class="fa fa-star checked"></span>
                 </p>
                 <p class="movie-description">
-                    {{ $data->description }}
+                    <?php echo $data->description ; ?>
                 </p>
             </div>
         </div>
