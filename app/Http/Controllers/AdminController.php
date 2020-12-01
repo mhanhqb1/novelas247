@@ -51,11 +51,30 @@ class AdminController extends Controller
     }
     
     /**
+     * Edit movie
+     */
+    public static function movieEdit($movieId)
+    {
+        $data = Movie::find($movieId);
+        $countries = Country::get_list([
+            'limit' => 999
+        ]);
+        return view('admin.movie_add', [
+            'data' => $data,
+            'countries' => $countries
+        ]);
+    }
+    
+    /**
      * Save movie
      */
     public static function movieSave(Request $request)
     {
-        $movie = new Movie();
+        if (!empty($request->id)) {
+            $movie = Movie::find($request->id);
+        } else {
+            $movie = new Movie();
+        }
         $movie->name = $request->name;
         $movie->slug = self::createSlug($request->name);
         $movie->image = $request->image;

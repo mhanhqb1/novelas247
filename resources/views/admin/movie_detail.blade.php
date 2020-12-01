@@ -6,7 +6,7 @@
         <h3 class="pb-3 mb-4 font-italic border-bottom">
             Movie detail 
             <a href="{{ route('admin.video_add', ['movieId' => $data->id]) }}" class="btn btn-warning">Add video</a>
-            <a href="" class="btn btn-primary">Edit</a>
+            <a href="{{ route('admin.movie_edit', ['movieId' => $data->id]) }}" class="btn btn-primary">Edit</a>
         </h3>
         <table class="table table-bordered">
             <tr>

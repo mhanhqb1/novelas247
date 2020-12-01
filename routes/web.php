@@ -23,6 +23,7 @@ $routeAdmin = 'admin';
 Route::get("/{$routeAdmin}/movies", [AdminController::class, 'movies'])->name('admin.movies');
 Route::get("/{$routeAdmin}/movie/add", [AdminController::class, 'movieAdd'])->name('admin.movie_add');
 Route::get("/{$routeAdmin}/movie/detail/{movieId}", [AdminController::class, 'movieDetail'])->name('admin.movie_detail');
+Route::get("/{$routeAdmin}/movie/edit/{movieId}", [AdminController::class, 'movieEdit'])->name('admin.movie_edit');
 Route::post("/{$routeAdmin}/movie/save", [AdminController::class, 'movieSave'])->name('admin.movie_save');
 Route::get("/{$routeAdmin}/video/add/{movieId}", [AdminController::class, 'videoAdd'])->name('admin.video_add');
 Route::post("/{$routeAdmin}/video/save", [AdminController::class, 'videoSave'])->name('admin.video_save');
