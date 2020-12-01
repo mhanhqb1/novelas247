@@ -69,7 +69,7 @@ class HomeController extends Controller
         if (empty($data)) {
             return redirect()->route('home.index');
         }
-        $pageTitle = $data->movie_name . ' - ' . $data->number;
+        $pageTitle = $data->movie_name . ' - ' . $data->name;
         $pageImage = $data->image;
         $listVideos = Video::where('movie_id', $data->movie_id)->orderBy('number', 'asc')->get();
         $related = Movie::inRandomOrder()->where('is_hot', 1)->where('id', '!=', $data->movie_id)->limit($limit)->get();
@@ -79,7 +79,9 @@ class HomeController extends Controller
             'pageImage' => $pageImage,
             'related' => $related,
             'listVideos' => $listVideos,
-            'videoNumber' => $videoNumber
+            'videoNumber' => $videoNumber,
+            'linkPrefix' => Video::$linkPrefix,
+            'sourceId' => Video::$sourceId
         ]);
     }
 }

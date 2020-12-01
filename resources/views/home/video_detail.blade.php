@@ -1,3 +1,26 @@
+<?php
+$sourceUrls = [];
+$urls = explode(PHP_EOL, $data['content']);
+if (!empty($urls)) {
+    foreach ($urls as $u) {
+        $tmp = explode($linkPrefix, $u);
+        $sourceUrls[] = [
+            'name' => $tmp[0],
+            'source' => $tmp[1]
+        ];
+    }
+}
+$server = !empty($_GET['server']) ? $_GET['server'] : 1;
+$sourceName = $sourceUrls[$server-1]['name'];
+$sourceVideo = $sourceUrls[$server-1]['source'];
+$sourceLayout = '';
+if ($sourceName == $sourceId['dailymotion']) {
+    $sourceLayout = 'layout.dailymotion';
+} else if ($sourceName == $sourceId['youtube']) {
+    $sourceLayout = 'layout.youtube';
+}
+?>
+
 @extends('layout.main')
 
 @section('content')
@@ -19,10 +42,15 @@
             <?php endif; ?>
             
             <div class="col-12">
-                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"> 
-                    <iframe style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden" frameborder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x7xql2o?autoplay=1&mute=0" width="100%" height="100%" allowfullscreen allow="autoplay"> </iframe> 
-                </div>
+                @include($sourceLayout, ['id' => $sourceVideo])
             </div>
+            <ul class="col-12 list-videos">
+                <?php foreach ($sourceUrls as $k => $s): ?>
+                <li>
+                    <a class="{{ $k + 1 == $server ? 'active' : '' }}" href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $videoNumber, 'server' => ($k + 1)]) }}">{{ 'Server '.($k + 1) }}</a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
     </div>
 </div>
