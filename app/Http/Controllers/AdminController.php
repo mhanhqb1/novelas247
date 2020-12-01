@@ -95,14 +95,29 @@ class AdminController extends Controller
             'movieId' => $movieId
         ]);
     }
+    /**
+     * Edit video
+     */
+    public static function videoEdit($videoId)
+    {
+        $data = Video::find($videoId);
+        return view('admin.video_add', [
+            'data' => $data,
+            'movieId' => $data->movie_id
+        ]);
+    }
     
     /**
      * Save video
      */
     public static function videoSave(Request $request)
     {
+        if (!empty($request->id)) {
+            $video = Video::find($request->id);
+        } else {
+            $video = new Video();
+        }
         $name = 'Capitulo'.' '.$request->number;
-        $video = new Video();
         $video->name = $name;
         $video->slug = self::createSlug($name);
         $video->movie_id = $request->movie_id;
@@ -110,7 +125,7 @@ class AdminController extends Controller
         $video->content = $request->content;
         $video->save();
         
-        return redirect()->route('admin.movies');
+        return redirect()->route('admin.movie_detail', ['movieId' => $video->movie_id]);
     }
     
     public static function createSlug($str, $delimiter = '-'){

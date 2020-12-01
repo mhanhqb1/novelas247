@@ -48,7 +48,7 @@
             <tr>
                 <td>{{ $v->name }}</td>
                 <td>{{ $v->content }}</td>
-                <td><a href="" class="btn btn-primary">Edit</a></td>
+                <td><a href="{{ route('admin.video_edit', ['videoId' => $v->id]) }}" class="btn btn-primary">Edit</a></td>
             </tr>
             <?php endforeach; ?>
         </table>

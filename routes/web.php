@@ -27,3 +27,4 @@ Route::get("/{$routeAdmin}/movie/edit/{movieId}", [AdminController::class, 'movi
 Route::post("/{$routeAdmin}/movie/save", [AdminController::class, 'movieSave'])->name('admin.movie_save');
 Route::get("/{$routeAdmin}/video/add/{movieId}", [AdminController::class, 'videoAdd'])->name('admin.video_add');
 Route::post("/{$routeAdmin}/video/save", [AdminController::class, 'videoSave'])->name('admin.video_save');
+Route::get("/{$routeAdmin}/video/edit/{videoId}", [AdminController::class, 'videoEdit'])->name('admin.video_edit');
