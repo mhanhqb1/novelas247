@@ -26,6 +26,12 @@ class Video extends Model {
      */
     protected $hidden = [];
     public $timestamps = true;
+    
+    public static $linkPrefix = '*_*';
+    public static $sourceId = [
+        'dailymotion' => 'dailymotion_id',
+        'youtube' => 'youtube_id'
+    ];
 
     public static function get_list($params) {
         # Init

@@ -92,7 +92,9 @@ class AdminController extends Controller
     public static function videoAdd($movieId)
     {
         return view('admin.video_add', [
-            'movieId' => $movieId
+            'movieId' => $movieId,
+            'linkPrefix' => Video::$linkPrefix,
+            'sourceId' => Video::$sourceId
         ]);
     }
     /**
@@ -103,7 +105,9 @@ class AdminController extends Controller
         $data = Video::find($videoId);
         return view('admin.video_add', [
             'data' => $data,
-            'movieId' => $data->movie_id
+            'movieId' => $data->movie_id,
+            'linkPrefix' => Video::$linkPrefix,
+            'sourceId' => Video::$sourceId
         ]);
     }
     
