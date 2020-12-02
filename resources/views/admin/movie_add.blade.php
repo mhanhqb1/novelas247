@@ -32,8 +32,15 @@
                 <textarea id="editor" rows="20" class="form-control" name="description">{{ !empty($data) ? $data->description : '' }}</textarea>
             </div>
             <div class="form-group">
-                <label for="country_id">Phim hot</label>
+                <label for="is_hot">Phim hot</label>
                 <select class="form-control" name="is_hot">
+                    <option value="1">Co</option>
+                    <option value="0">Khong</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Hien thi</label>
+                <select class="form-control" name="status">
                     <option value="1">Co</option>
                     <option value="0">Khong</option>
                 </select>

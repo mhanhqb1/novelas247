@@ -25,6 +25,8 @@
                     <th>ID</th>
                     <th>Image</th>
                     <th>Name</th>
+                    <th>Hot</th>
+                    <th>Hien thi</th>
                     <th></th>
                 </tr>
             </thead>
@@ -36,6 +38,8 @@
                         </td>
                         <td><label for="checkId-{{ $v->id }}"><img src="{{ $v->image }}" width="200px"/></label></td>
                         <td>{{ $v->name }}</td>
+                        <td>{{ $v->is_hot }}</td>
+                        <td>{{ $v->status }}</td>
                         <td>
                             <a href="{{ route('admin.movie_detail', ['movieId' => $v->id]) }}" class="btn btn-warning">Detail</a>
                             <a href="{{ route('admin.movie_edit', ['movieId' => $v->id]) }}" class="btn btn-primary">Edit</a>

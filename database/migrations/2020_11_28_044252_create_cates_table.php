@@ -18,6 +18,7 @@ class CreateCatesTable extends Migration
             $table->string('name', 255);
             $table->string('slug', 255);
             $table->boolean('is_hot')->default(0);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

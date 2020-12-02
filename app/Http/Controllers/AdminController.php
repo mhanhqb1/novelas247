@@ -78,9 +78,10 @@ class AdminController extends Controller
         $movie->name = $request->name;
         $movie->slug = self::createSlug($request->name);
         $movie->image = $request->image;
-        $movie->country_id = $request->country_id;
+        $movie->country_id = !empty($request->country_id) ? $request->country_id : 0;
         $movie->description = $request->description;
         $movie->is_hot = !empty($request->is_hot) ? 1 : 0;
+        $movie->status = !empty($request->status) ? $request->status : 0;
         $movie->save();
         
         return redirect()->route('admin.movies');
@@ -127,6 +128,7 @@ class AdminController extends Controller
         $video->movie_id = $request->movie_id;
         $video->number = $request->number;
         $video->content = $request->content;
+        $video->status = !empty($request->status) ? $request->status : 0;
         $video->save();
         
         return redirect()->route('admin.movie_detail', ['movieId' => $video->movie_id]);

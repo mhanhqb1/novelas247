@@ -19,6 +19,7 @@ class CreateCountriesTable extends Migration
             $table->string('slug', 255);
             $table->string('flag_image', 255);
             $table->boolean('is_hot')->default(0);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

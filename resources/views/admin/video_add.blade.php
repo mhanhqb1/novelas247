@@ -24,6 +24,13 @@
                 </p>
                 <textarea rows="15" class="form-control" name="content"><?php if (!empty($data)): echo $data->content; endif; ?></textarea>
             </div>
+            <div class="form-group">
+                <label for="status">Hien thi</label>
+                <select class="form-control" name="status">
+                    <option {{ isset($data->status) && $data->status == 1 ? "selected='selected'" : '' }} value="1">Co</option>
+                    <option {{ isset($data->status) && $data->status == 0 ? "selected='selected'" : '' }} value="0">Khong</option>
+                </select>
+            </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>

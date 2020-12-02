@@ -16,7 +16,8 @@ class Video extends Model {
         'slug',
         'content',
         'movie_id',
-        'number'
+        'number',
+        'status'
     ];
 
     /**

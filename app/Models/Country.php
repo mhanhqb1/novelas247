@@ -15,7 +15,8 @@ class Country extends Model {
         'name',
         'slug',
         'flag_image',
-        'is_hot'
+        'is_hot',
+        'status'
     ];
 
     /**

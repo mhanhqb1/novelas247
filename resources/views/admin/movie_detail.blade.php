@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td class="bg-gray-900">Quoc gia</td>
-                <td>{{ $country->name }}</td>
+                <td>{{ !empty($country->name) ? $country->name : '' }}</td>
             </tr>
             <tr>
                 <td class="bg-gray-900">Hinh anh</td>
@@ -42,12 +42,14 @@
             <tr>
                 <td class="bg-gray-900">Ten</td>
                 <td class="bg-gray-900">Link</td>
+                <td class="bg-gray-900">Hien thi</td>
                 <td class="bg-gray-900"></td>
             </tr>
             <?php foreach ($videos as $v): ?>
             <tr>
                 <td>{{ $v->name }}</td>
                 <td>{{ $v->content }}</td>
+                <td>{{ $v->status }}</td>
                 <td><a href="{{ route('admin.video_edit', ['videoId' => $v->id]) }}" class="btn btn-primary">Edit</a></td>
             </tr>
             <?php endforeach; ?>

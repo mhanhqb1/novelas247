@@ -22,6 +22,7 @@ class CreateMoviesTable extends Migration
             $table->text('description')->nullable();
             $table->boolean('is_hot')->default(0);
             $table->integer('rate')->default(0);
+            $table->boolean('status')->default(0);
             $table->date('publish_date')->nullable();
             $table->timestamps();
         });

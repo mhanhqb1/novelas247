@@ -1,8 +1,8 @@
 <?php
 $topImage = !empty($pageImage) ? $pageImage : url('/') . '/imgs/1.jpg';
 $jumbotronImage = url('/') . '/imgs/1.jpg';
-$_siteName = 'Novelas247.Com';
-$_siteTitle = !empty($pageTitle) ? $pageTitle : 'Novelas247';
+$_siteName = 'Novelas369.Com';
+$_siteTitle = !empty($pageTitle) ? $pageTitle : 'Novelas369';
 $_siteDescription = 'Novelas';
 ?>
 <!DOCTYPE html>
@@ -93,14 +93,14 @@ $_siteDescription = 'Novelas';
         </header>
 
         <div class="container-fluid border-bottom">
-            <div class="nav-scroller py-1 mb-2 container">
+<!--            <div class="nav-scroller py-1 mb-2 container">
                 <nav class="nav d-flex justify-content-between">
                     <a class="p-2 text-center" href="{{ url('/') }}">Home</a>
                     <a class="p-2 text-center" href="{{ url('/images') }}">Images</a>
                     <a class="p-2 text-center" href="{{ url('/videos') }}">Videos</a>
                     <a class="p-2 text-center" href="{{ url('/movies') }}">Movies</a>
                 </nav>
-            </div>
+            </div>-->
         </div>
         
     </div>

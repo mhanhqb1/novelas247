@@ -14,7 +14,8 @@ class Cate extends Model {
     protected $fillable = [
         'name',
         'slug',
-        'is_hot'
+        'is_hot',
+        'status'
     ];
 
     /**

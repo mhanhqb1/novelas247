@@ -20,6 +20,7 @@ class CreateVideosTable extends Migration
             $table->text('content');
             $table->integer('movie_id');
             $table->integer('number');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

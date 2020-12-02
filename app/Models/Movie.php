@@ -19,7 +19,8 @@ class Movie extends Model {
         'description',
         'is_hot',
         'rate',
-        'publish_date'
+        'publish_date',
+        'status'
     ];
 
     /**
@@ -46,6 +47,9 @@ class Movie extends Model {
         # Filter
         if (isset($params['is_hot']) && $params['is_hot'] != '') {
             $data = $data->where('is_hot', $params['is_hot']);
+        }
+        if (isset($params['status']) && $params['status'] != '') {
+            $data = $data->where('status', $params['status']);
         }
 
         # Return data
