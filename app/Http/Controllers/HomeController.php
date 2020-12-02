@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $hotMovies = Movie::get_list([
             'is_hot' => 1,
-            'limit' => 8,
+            'limit' => 16,
             'is_random' => 1,
             'status' => 1
         ]);
