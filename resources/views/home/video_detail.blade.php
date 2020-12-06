@@ -15,9 +15,11 @@ $sourceName = $sourceUrls[$server-1]['name'];
 $sourceVideo = $sourceUrls[$server-1]['source'];
 $sourceLayout = '';
 if ($sourceName == $sourceId['dailymotion']) {
-    $sourceLayout = 'layout.dailymotion';
+    $sourceLayout = 'layout.video.dailymotion';
 } else if ($sourceName == $sourceId['youtube']) {
-    $sourceLayout = 'layout.youtube';
+    $sourceLayout = 'layout.video.youtube';
+} else if ($sourceName == $sourceId['gg_driver']) {
+    $sourceLayout = 'layout.video.gg_driver';
 }
 ?>
 

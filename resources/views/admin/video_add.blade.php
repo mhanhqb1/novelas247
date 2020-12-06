@@ -20,7 +20,8 @@
                 <label for="content">Link videos</label>
                 <p>
                     <strong>{{ $sourceId['dailymotion'].$linkPrefix }}</strong>xxx, vi du: {{ $sourceId['dailymotion'].$linkPrefix }}x7wz4qt <br/>
-                    <strong>{{ $sourceId['youtube'].$linkPrefix }}</strong>xxx, vi du: {{ $sourceId['youtube'].$linkPrefix }}I_ue3KU-TeQ
+                    <strong>{{ $sourceId['youtube'].$linkPrefix }}</strong>xxx, vi du: {{ $sourceId['youtube'].$linkPrefix }}I_ue3KU-TeQ<br/>
+                    <strong>{{ $sourceId['gg_driver'].$linkPrefix }}</strong>xxx, vi du: {{ $sourceId['gg_driver'].$linkPrefix }}1WPOC6n3m6nnBp4L1sXNuWZN4bcEQ4kGO
                 </p>
                 <textarea rows="15" class="form-control" name="content"><?php if (!empty($data)): echo $data->content; endif; ?></textarea>
             </div>
