@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $hotMovies = Movie::get_list([
             'is_hot' => 1,
-            'limit' => 16,
+            'limit' => 32,
             'is_random' => 1,
             'status' => 1
         ]);
@@ -73,7 +73,7 @@ class HomeController extends Controller
         }
         $pageTitle = $data->movie_name . ' - ' . $data->name;
         $pageImage = $data->image;
-        $listVideos = Video::where('movie_id', $data->movie_id)->where('status', 1)->orderBy('number', 'asc')->get();
+        $listVideos = Video::where('movie_id', $data->movie_id)->where('status', 1)->orderBy('id', 'asc')->orderBy('number', 'asc')->get();
         $related = Movie::inRandomOrder()->where('is_hot', 1)->where('id', '!=', $data->movie_id)->limit($limit)->get();
         return view('home.video_detail', [
             'data' => $data, 

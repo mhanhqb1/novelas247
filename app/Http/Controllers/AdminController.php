@@ -82,6 +82,7 @@ class AdminController extends Controller
         $movie->description = $request->description;
         $movie->is_hot = !empty($request->is_hot) ? 1 : 0;
         $movie->status = !empty($request->status) ? $request->status : 0;
+        $movie->source_url = !empty($request->source_url) ? $request->source_url : null;
         $movie->save();
         
         return redirect()->route('admin.movies');

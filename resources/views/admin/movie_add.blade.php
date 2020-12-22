@@ -16,6 +16,10 @@
                 <input type="text" class="form-control" name="name" value="{{ !empty($data) ? $data->name : '' }}"/>
             </div>
             <div class="form-group">
+                <label for="source_url">Nguon phim</label>
+                <input type="text" class="form-control" name="source_url" value="{{ !empty($data) ? $data->source_url : '' }}"/>
+            </div>
+            <div class="form-group">
                 <label for="image">Hinh anh</label>
                 <input type="text" class="form-control" name="image" placeholder="Image" value="{{ !empty($data) ? $data->image : '' }}"/>
             </div>

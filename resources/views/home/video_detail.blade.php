@@ -20,6 +20,8 @@ if ($sourceName == $sourceId['dailymotion']) {
     $sourceLayout = 'layout.video.youtube';
 } else if ($sourceName == $sourceId['gg_driver']) {
     $sourceLayout = 'layout.video.gg_driver';
+} else if ($sourceName == $sourceId['ok_ru']) {
+    $sourceLayout = 'layout.video.ok_ru';
 }
 ?>
 
@@ -37,7 +39,7 @@ if ($sourceName == $sourceId['dailymotion']) {
             <ul class="col-12 list-videos">
                 <?php foreach ($listVideos as $v): ?>
                 <li>
-                    <a class="{{ $v['number'] == $videoNumber ? 'active' : '' }}" href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $v['number']]) }}">{{ $v['number'] }}</a>
+                    <a class="{{ $v['number'] == $videoNumber ? 'active' : '' }}" href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $v['number']]) }}">{{ $v['name'] }}</a>
                 </li>
                 <?php endforeach; ?>
             </ul>

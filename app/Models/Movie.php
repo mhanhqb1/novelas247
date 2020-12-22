@@ -20,7 +20,9 @@ class Movie extends Model {
         'is_hot',
         'rate',
         'publish_date',
-        'status'
+        'status',
+        'source_url',
+        'crawl_at'
     ];
 
     /**

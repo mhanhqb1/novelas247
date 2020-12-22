@@ -32,7 +32,8 @@ class Video extends Model {
     public static $sourceId = [
         'dailymotion' => 'dailymotion_id',
         'youtube' => 'youtube_id',
-        'gg_driver' => 'gg_driver_id'
+        'gg_driver' => 'gg_driver_id',
+        'ok_ru' => 'ok_ru_id'
     ];
 
     public static function get_list($params) {

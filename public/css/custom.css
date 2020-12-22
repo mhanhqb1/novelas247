@@ -242,6 +242,9 @@ h1, h2, h3, h4, h5, h6 {
 .list-videos li {
     display: inline-block;
     list-style: none;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .list-videos li a {
     padding: 7px 15px;
