@@ -8,6 +8,7 @@ $_siteDescription = 'Novelas';
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <meta name="clckd" content="4f48f8a351cf26e34259d05ab4fa1075" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="$_siteDescription">
