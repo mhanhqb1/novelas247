@@ -29,5 +29,14 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'google' => [
+        'youtube_api_key' => env('GOOGLE_YOUTUBE_API_KEY'),
+        'ga_key' => env('GOOGLE_GA_KEY')
+    ],
+    
+    'facebook' => [
+        'pixel_id' => env('FACEBOOK_PIXEL_ID')
+    ]
 
 ];
