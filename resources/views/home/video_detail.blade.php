@@ -35,7 +35,20 @@ if ($sourceName == $sourceId['dailymotion']) {
                 <h1 class="text-orange-500">{{ $pageTitle }}</h1>
             </div>
             
+            <div class="col-12">
+                @include($sourceLayout, ['id' => $sourceVideo])
+            </div>
+            
+            <ul class="col-12 list-videos list-servers">
+                <?php foreach ($sourceUrls as $k => $s): ?>
+                <li>
+                    <a class="{{ $k + 1 == $server ? 'active' : '' }}" href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $videoNumber, 'server' => ($k + 1)]) }}">{{ 'Opción '.($k + 1) }}</a>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+            
             <?php if (!empty($listVideos)): ?>
+            <h2>CAPITULOS</h2>
             <ul class="col-12 list-videos">
                 <?php foreach ($listVideos as $v): ?>
                 <li>
@@ -45,16 +58,6 @@ if ($sourceName == $sourceId['dailymotion']) {
             </ul>
             <?php endif; ?>
             
-            <div class="col-12">
-                @include($sourceLayout, ['id' => $sourceVideo])
-            </div>
-            <ul class="col-12 list-videos">
-                <?php foreach ($sourceUrls as $k => $s): ?>
-                <li>
-                    <a class="{{ $k + 1 == $server ? 'active' : '' }}" href="{{ route('home.video_detail', ['movieSlug' => $data['movie_slug'], 'videoNumber' => $videoNumber, 'server' => ($k + 1)]) }}">{{ 'Server '.($k + 1) }}</a>
-                </li>
-                <?php endforeach; ?>
-            </ul>
         </div>
     </div>
 </div>
