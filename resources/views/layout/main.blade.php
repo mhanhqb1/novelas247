@@ -125,5 +125,7 @@ $_siteDescription = 'Novelas';
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <script data-cfasync="false" type="text/javascript" src="//runbornto.com/t/9/fret/meow4/1806809/brt.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="//nicksstevmark.com/bultykh/ipp24/7/bazinga/1807356" async></script>
+    <script data-cfasync="false" async="async" type="text/javascript" src="//sevenedgesteve.com/q/tdl/95/dnt/1807357/kep.js"></script>
 </body>
 </html>
