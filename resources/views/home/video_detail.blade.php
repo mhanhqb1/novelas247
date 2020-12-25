@@ -22,6 +22,8 @@ if ($sourceName == $sourceId['dailymotion']) {
     $sourceLayout = 'layout.video.gg_driver';
 } else if ($sourceName == $sourceId['ok_ru']) {
     $sourceLayout = 'layout.video.ok_ru';
+} else {
+    $sourceLayout = 'layout.video.iframe';
 }
 ?>
 
